@@ -1,5 +1,4 @@
-import Navbar from "@/components/Navbar";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
