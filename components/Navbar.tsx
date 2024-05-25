@@ -9,7 +9,7 @@ const Navbar = () => {
         <Link href="/">
           <h1 className="text-3xl font-bold">
             Note
-            <span>Verse</span>
+            <span className="text-primary">Verse</span>
           </h1>
         </Link>
         <div className="flex items-center gap-x-5">
