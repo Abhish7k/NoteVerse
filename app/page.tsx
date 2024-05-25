@@ -1,5 +1,6 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import Navbar from "./components/Navbar";
 import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs";
 
 export default function Home() {
