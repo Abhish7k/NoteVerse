@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AuthButtons from "./AuthButtons";
 import { ThemeToggle } from "./ThemeToggle";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 const Navbar = () => {
   return (
