@@ -5,6 +5,7 @@ import {
   getKindeServerSession,
   LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/server";
+import UserNav from "./UserNav";
 
 const AuthButtons = async () => {
   const { isAuthenticated } = getKindeServerSession();
@@ -12,9 +13,7 @@ const AuthButtons = async () => {
   return (
     <div>
       {(await isAuthenticated()) ? (
-        <LogoutLink>
-          <Button>Log out</Button>
-        </LogoutLink>
+        <UserNav />
       ) : (
         <div className="flex items-center gap-x-5">
           <LoginLink>
