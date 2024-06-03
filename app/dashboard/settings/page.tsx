@@ -15,9 +15,30 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import React from "react";
+import prisma from "@/app/lib/db";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-const page = () => {
+async function getData(userId: string) {
+  const data = await prisma?.user.findUnique({
+    where: {
+      id: userId,
+    },
+    select: {
+      name: true,
+      email: true,
+      colorScheme: true,
+    },
+  });
+
+  return data;
+}
+
+const page = async () => {
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
+
+  const data = await getData(user?.id as string);
+
   return (
     <div className="grid items-start gap-8">
       <div className="flex items-center justify-between px-2">
@@ -45,7 +66,7 @@ const page = () => {
                   type="text"
                   id="name"
                   placeholder="Your Name"
-                  // defaultValue={data?.name ?? undefined}
+                  defaultValue={data?.name ?? undefined}
                 />
               </div>
               <div className="space-y-1">
@@ -56,16 +77,13 @@ const page = () => {
                   id="email"
                   placeholder="Your Email"
                   disabled
-                  // defaultValue={data?.email as string}
+                  defaultValue={data?.email as string}
                 />
               </div>
 
               <div className="space-y-1">
                 <Label>Color Scheme</Label>
-                <Select
-                  name="color"
-                  // defaultValue={data?.colorScheme}
-                >
+                <Select name="color" defaultValue={data?.colorScheme}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select a color" />
                   </SelectTrigger>
