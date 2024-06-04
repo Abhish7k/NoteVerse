@@ -74,10 +74,12 @@ const DashboardPage = async () => {
               className="flex items-center justify-between p-4"
             >
               <div>
-                <h1 className="font-semibold text-xl text-primary">
-                  {item.title}
-                </h1>
-                <p>
+                <Link href={`/dashboard/notes/${item.id}`}>
+                  <h1 className="font-semibold text-xl text-primary hover:underline">
+                    {item.title}
+                  </h1>
+                </Link>
+                <p className="mt-2 text-sm text-muted-foreground">
                   {new Intl.DateTimeFormat("en-US", {
                     dateStyle: "full",
                   }).format(new Date(item.createdAt))}
