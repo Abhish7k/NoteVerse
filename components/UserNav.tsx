@@ -33,7 +33,7 @@ const UserNav = ({
         <Button variant="ghost" className="relative h-10 w-10 rounded-full">
           <Avatar className="h-10 w-10 rounded-full">
             <AvatarImage src={image} alt="profile-image" />
-            <AvatarFallback>U</AvatarFallback>
+            <AvatarFallback>{name[0]}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>

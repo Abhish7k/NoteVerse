@@ -1,9 +1,18 @@
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import prisma from "@/app/lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { getStripeSession } from "@/app/lib/stripe";
-import { StripeSubscriptionCreationButton } from "@/components/SubmitButton";
+import { getStripeSession, stripe } from "@/app/lib/stripe";
+import {
+  StripePortal,
+  StripeSubscriptionCreationButton,
+} from "@/components/SubmitButton";
 import { redirect } from "next/navigation";
 
 const featureItems = [
@@ -32,7 +41,7 @@ async function getData(userId: string) {
   return data;
 }
 
-const page = async () => {
+export default async function BillingPage() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
@@ -55,13 +64,55 @@ const page = async () => {
     }
 
     const subscriptionUrl = await getStripeSession({
-      customerId: dbUser?.stripeCustomerId,
+      customerId: dbUser.stripeCustomerId,
       domainUrl: "http://localhost:3000",
       priceId: process.env.STRIPE_PRICE_ID as string,
     });
 
     return redirect(subscriptionUrl);
   };
+
+  async function createCustomerPortal() {
+    "use server";
+
+    const session = await stripe.billingPortal.sessions.create({
+      customer: data?.user.stripeCustomerId as string,
+      return_url: "http://localhost:3000/dashboard",
+    });
+
+    return redirect(session.url);
+  }
+
+  if (data?.status === "active") {
+    return (
+      <div className="grid items-start gap-8">
+        <div className="flex items-center justify-between px-2">
+          <div className="grid gap-1">
+            <h1 className="text-3xl md:text-4xl ">Subscription</h1>
+            <p className="text-lg text-muted-foreground">
+              Settings reagding your subscription
+            </p>
+          </div>
+        </div>
+
+        <Card className="w-full lg:w-2/3">
+          <CardHeader>
+            <CardTitle>Edit Subscription</CardTitle>
+            <CardDescription>
+              Click on the button below, this will give you the opportunity to
+              change your payment details and view your statement at the same
+              time.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form action={createCustomerPortal}>
+              <StripePortal />
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-md mx-auto space-y-4">
@@ -99,6 +150,4 @@ const page = async () => {
       </Card>
     </div>
   );
-};
-
-export default page;
+}

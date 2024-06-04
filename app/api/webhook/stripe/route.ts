@@ -1,9 +1,9 @@
+import { stripe } from "@/app/lib/stripe";
 import { headers } from "next/headers";
 import Stripe from "stripe";
-import { stripe } from "@/app/lib/stripe";
 import prisma from "@/app/lib/db";
 
-const POST = async (req: Request) => {
+export async function POST(req: Request) {
   const body = await req.text();
 
   const signature = headers().get("Stripe-Signature") as string;
@@ -68,4 +68,4 @@ const POST = async (req: Request) => {
   }
 
   return new Response(null, { status: 200 });
-};
+}
