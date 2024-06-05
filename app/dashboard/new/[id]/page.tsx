@@ -15,10 +15,11 @@ import Link from "next/link";
 import prisma from "@/app/lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
-import { revalidatePath, unstable_noStore as noStore } from "next/cache";
+import { revalidatePath, unstable_noStore } from "next/cache";
 
 async function getData({ userId, noteId }: { userId: string; noteId: string }) {
-  noStore();
+  unstable_noStore();
+
   const data = await prisma.note.findUnique({
     where: {
       id: noteId,

@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import prisma from "@/app/lib/db";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { Edit, File } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -8,15 +8,6 @@ import { TrashDelete } from "@/components/SubmitButton";
 import { revalidatePath } from "next/cache";
 
 const getData = async (userId: string) => {
-  // const data = await prisma.note.findMany({
-  //   where: {
-  //     userId: userId,
-  //   },
-  //   orderBy: {
-  //     createdAt: "desc",
-  //   },
-  // });
-
   const data = await prisma.user.findUnique({
     where: {
       id: userId,

@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Edit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { unstable_noStore as noStore } from "next/cache";
 
 const getData = async ({
   userId,
@@ -12,6 +13,8 @@ const getData = async ({
   userId: string;
   noteId: string;
 }) => {
+  noStore();
+
   const data = await prisma.note.findUnique({
     where: {
       id: noteId,
