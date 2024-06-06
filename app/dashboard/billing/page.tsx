@@ -17,11 +17,10 @@ import { redirect } from "next/navigation";
 import { unstable_noStore } from "next/cache";
 
 const featureItems = [
-  { name: "Lorem Ipsum something" },
-  { name: "Lorem Ipsum something" },
-  { name: "Lorem Ipsum something" },
-  { name: "Lorem Ipsum something" },
-  { name: "Lorem Ipsum something" },
+  { name: "Unlimited Note Creation" },
+  { name: "Customizable Templates and Themes" },
+  { name: "Priority Customer Support" },
+  { name: "Enhanced Security and Privacy" },
 ];
 
 async function getData(userId: string) {

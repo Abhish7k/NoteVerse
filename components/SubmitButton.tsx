@@ -32,7 +32,7 @@ export function StripeSubscriptionCreationButton() {
         </Button>
       ) : (
         <Button type="submit" className="w-full">
-          Create Subscription
+          Buy Subscription
         </Button>
       )}
     </>
