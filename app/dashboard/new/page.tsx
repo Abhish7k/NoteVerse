@@ -15,6 +15,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { unstable_noStore as noStore } from "next/cache";
+import prisma from "@/app/lib/db";
 
 export default async function NewNoteRoute() {
   noStore();
