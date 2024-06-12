@@ -21,12 +21,8 @@ const AuthButtons = async () => {
         />
       ) : (
         <div className="flex items-center gap-x-5">
-          <LoginLink>
-            <Button>Sign In</Button>
-          </LoginLink>
-          <RegisterLink>
-            <Button variant="secondary">Sign Up</Button>
-          </RegisterLink>
+          <LoginButton />
+          <RegisterButton />
         </div>
       )}
     </div>
@@ -34,3 +30,19 @@ const AuthButtons = async () => {
 };
 
 export default AuthButtons;
+
+export function LoginButton() {
+  return (
+    <LoginLink>
+      <Button>Sign In</Button>
+    </LoginLink>
+  );
+}
+
+export function RegisterButton() {
+  return (
+    <RegisterLink>
+      <Button>Sign Up</Button>
+    </RegisterLink>
+  );
+}

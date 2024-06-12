@@ -48,7 +48,7 @@ export default async function Home() {
         </div>
       </div>
 
-      <HeroScroll />
+      {/* <HeroScroll /> */}
 
       <CtaSection />
 

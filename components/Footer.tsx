@@ -21,14 +21,14 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="w-full mt-10 px-52 py-20 flex justify-between border-t">
+    <footer className="w-full mt-10 px-10 lg:px-52 py-20 flex justify-between border-t transition-all ease-in-out duration-300">
       {/* left col */}
       <div className="">
-        <h1 className="font-bold text-4xl">
+        <h1 className="font-bold text-3xl md:text-4xl transition-all ease-in-out duration-300">
           Note
           <span className="text-primary">Verse</span>
         </h1>
-        <h3 className="mt-4 font-light">
+        <h3 className="mt-4 font-light text-sm md:text-lg">
           Built by
           <Link
             href="https://github.com/Abhish7k"
