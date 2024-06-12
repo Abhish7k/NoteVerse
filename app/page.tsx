@@ -1,4 +1,5 @@
 import GetStartedButton from "@/components/GetStartedButton";
+import { HeroScroll } from "@/components/HeroImageSection";
 import { Button } from "@/components/ui/button";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { ChevronRight } from "lucide-react";
@@ -8,8 +9,8 @@ export default async function Home() {
   const { isAuthenticated } = getKindeServerSession();
 
   return (
-    <section className="flex items-center justify-center bg-background h-[80vh]">
-      <div className="relative items-center w-full px-5 py-12 mx-auto lg:px-16 max-w-7xl md:px-12">
+    <section className="flex-col items-center justify-center bg-background h-[80vh]">
+      <div className="relative items-center w-full pt-44 px-5 mx-auto lg:px-16 max-w-7xl md:px-12">
         <div className="max-w-3xl mx-auto text-center">
           <div>
             <span className="w-auto px-6 py-3 rounded-full bg-secondary">
@@ -44,6 +45,8 @@ export default async function Home() {
           </div>
         </div>
       </div>
+
+      <HeroScroll />
     </section>
   );
 }

@@ -44,7 +44,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`{inter.className} ${data?.colorScheme ?? "theme-orange"}`}
+        className={`{inter.className} ${data?.colorScheme ?? "theme-blue"}`}
       >
         <ThemeProvider
           attribute="class"
