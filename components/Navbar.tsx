@@ -1,6 +1,8 @@
 import Link from "next/link";
 import AuthButtons from "./AuthButtons";
 import { ThemeToggle } from "./ThemeToggle";
+import { MenuIcon } from "lucide-react";
+import Menu from "./Menu";
 
 const Navbar = () => {
   return (
@@ -12,10 +14,12 @@ const Navbar = () => {
             <span className="text-primary">Verse</span>
           </h1>
         </Link>
-        <div className="flex items-center gap-x-5">
+        <div className="hidden md:flex items-center gap-x-5 transition-all">
           <AuthButtons />
-
           <ThemeToggle />
+        </div>
+        <div className="block md:hidden">
+          <Menu />
         </div>
       </div>
     </nav>
