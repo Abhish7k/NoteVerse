@@ -42,7 +42,7 @@ export function LoginButton() {
 export function RegisterButton() {
   return (
     <RegisterLink>
-      <Button>Sign Up</Button>
+      <Button variant="secondary">Sign Up</Button>
     </RegisterLink>
   );
 }
