@@ -1,4 +1,5 @@
 import { CtaSection } from "@/components/CtaSection";
+import Footer from "@/components/Footer";
 import GetStartedButton from "@/components/GetStartedButton";
 import { HeroScroll } from "@/components/HeroImageSection";
 import { Button } from "@/components/ui/button";
@@ -50,6 +51,8 @@ export default async function Home() {
       <HeroScroll />
 
       <CtaSection />
+
+      <Footer />
     </section>
   );
 }
