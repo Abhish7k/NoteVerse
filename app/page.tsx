@@ -1,3 +1,4 @@
+import { CtaSection } from "@/components/CtaSection";
 import GetStartedButton from "@/components/GetStartedButton";
 import { HeroScroll } from "@/components/HeroImageSection";
 import { Button } from "@/components/ui/button";
@@ -47,6 +48,8 @@ export default async function Home() {
       </div>
 
       <HeroScroll />
+
+      <CtaSection />
     </section>
   );
 }
