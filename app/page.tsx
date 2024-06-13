@@ -17,7 +17,7 @@ export default async function Home() {
           <div>
             <span className="w-auto px-6 py-3 rounded-full bg-secondary">
               <span className="text-sm font-medium text-primary">
-                Sort your Notes easily
+                Organize Your Ideas Seamlessly
               </span>
             </span>
 

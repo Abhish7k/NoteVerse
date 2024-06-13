@@ -1,7 +1,6 @@
 import Link from "next/link";
 import AuthButtons from "./AuthButtons";
 import { ThemeToggle } from "./ThemeToggle";
-import { MenuIcon } from "lucide-react";
 import Menu from "./Menu";
 
 const Navbar = () => {
