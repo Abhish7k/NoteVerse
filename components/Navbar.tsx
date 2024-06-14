@@ -1,11 +1,20 @@
-import Link from "next/link";
-import AuthButtons from "./AuthButtons";
-import { ThemeToggle } from "./ThemeToggle";
-import Menu from "./Menu";
+"use client";
 
-const Navbar = () => {
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+const Navbar = ({ children }: { children: React.ReactNode }) => {
   return (
-    <nav className="h-[10vh] bg-background flex items-center border-b">
+    <motion.nav
+      className="h-[10vh] bg-background flex items-center border-b"
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.4,
+      }}
+    >
       <div className="container flex items-center justify-between">
         <Link href="/">
           <h1 className="text-3xl font-bold">
@@ -13,15 +22,11 @@ const Navbar = () => {
             <span className="text-primary">Verse</span>
           </h1>
         </Link>
-        <div className="hidden md:flex items-center gap-x-5 transition-all">
-          <AuthButtons />
-          <ThemeToggle />
-        </div>
-        <div className="block md:hidden">
-          <Menu />
-        </div>
+
+        {/* nav buttons */}
+        {children}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
