@@ -8,9 +8,9 @@ export default function HeroSection({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative items-center w-full pt-44 px-5 mx-auto lg:px-16 max-w-7xl md:px-12">
+    <div className="relative items-center w-full pt-16 md:pt-24 px-5 mx-auto lg:px-16 md:px-12 transition-all">
       <motion.div
-        className="max-w-3xl mx-auto text-center"
+        className="max-w-5xl mx-auto text-center"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -19,17 +19,11 @@ export default function HeroSection({
         }}
       >
         <div>
-          <span className="w-auto px-6 py-3 rounded-full bg-secondary">
-            <span className="text-sm font-medium text-primary">
-              Organize Your Ideas Seamlessly
-            </span>
-          </span>
-
-          <h1 className="mt-8 text-center text-3xl font-extrabold tracking-tight lg:text-6xl">
+          <h1 className="mt-8 w-full text-center text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight transition-all">
             Master Your Notes <br />
             With Ease
           </h1>
-          <p className="max-w-xl mx-auto mt-8 text-base lg:text-xl text-secondary-foreground">
+          <p className="max-w-xl mx-auto mt-5 text-base lg:text-xl text-secondary-foreground/80 ">
             Streamline your notes and boost productivity. Simple, powerful, and
             accessible.
           </p>

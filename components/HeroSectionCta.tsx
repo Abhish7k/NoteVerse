@@ -8,10 +8,10 @@ export default async function HeroSectionCta() {
   const { isAuthenticated } = getKindeServerSession();
 
   return (
-    <div className="flex justify-center max-w-sm mx-auto mt-10">
+    <div className="flex justify-center max-w-sm mx-auto mt-6">
       {(await isAuthenticated()) ? (
         <Link href="/dashboard">
-          <Button size="lg">
+          <Button>
             Go to your Dashboard
             <span>
               <ChevronRight className="h-5 w-5" />
