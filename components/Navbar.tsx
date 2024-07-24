@@ -17,7 +17,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
     >
       <div className="container flex items-center justify-between">
         <Link href="/">
-          <h1 className="text-3xl font-bold">
+          <h1 className="text-2xl lg:text-3xl font-bold transition-all">
             Note
             <span className="text-primary">Verse</span>
           </h1>
