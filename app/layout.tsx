@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { ThemeProvider } from "../components/theme-provider";
 import Navbar from "@/components/Navbar";
@@ -46,7 +47,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`{inter.className} ${data?.colorScheme ?? "theme-blue"}`}
+        className={`${GeistSans.className} ${
+          data?.colorScheme ?? "theme-blue"
+        }`}
       >
         <ThemeProvider
           attribute="class"
