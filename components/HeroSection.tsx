@@ -1,12 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import LightDash from "@/public/dash-light.png";
+import DarkDash from "@/public/dash-dark.png";
 
 export default function HeroSection({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { theme } = useTheme();
+
   return (
     <div className="relative items-center w-full pt-16 md:pt-24 px-5 mx-auto lg:px-16 md:px-12 transition-all">
       <motion.div
@@ -31,6 +37,19 @@ export default function HeroSection({
 
         {/* get started button */}
         {children}
+
+        {/*  */}
+        <div className="mt-10 z-10">
+          <div className="bg-gray-50 dark:bg-gray-900 mt-10 p-2 md:p-4 flex justify-center items-center rounded-2xl md:rounded-3xl border transition-all">
+            <div className="relative bg-white dark:bg-black rounded-2xl md:rounded-3xl border p-2 max-w-screen-xl mx-auto transition-all">
+              <Image
+                src={theme === "light" ? LightDash : DarkDash}
+                alt="hero"
+                className="rounded-3xl"
+              />
+            </div>
+          </div>
+        </div>
       </motion.div>
     </div>
   );
