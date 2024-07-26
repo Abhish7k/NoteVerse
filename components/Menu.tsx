@@ -8,8 +8,8 @@ export default function Menu() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline">
-          <MenuIcon />
+        <Button variant="outline" size="sm">
+          <MenuIcon className="w-5 h-5" />
         </Button>
       </SheetTrigger>
       <SheetContent>

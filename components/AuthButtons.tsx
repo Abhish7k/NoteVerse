@@ -20,7 +20,7 @@ const AuthButtons = async () => {
           name={user?.given_name as string}
         />
       ) : (
-        <div className="flex items-center gap-x-5">
+        <div className="flex items-center gap-x-4">
           <LoginButton />
           <RegisterButton />
         </div>
@@ -34,7 +34,7 @@ export default AuthButtons;
 export function LoginButton() {
   return (
     <LoginLink>
-      <Button>Sign In</Button>
+      <Button className="">Sign In</Button>
     </LoginLink>
   );
 }
