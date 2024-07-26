@@ -43,7 +43,7 @@ export default function HeroSection({
           <div className="bg-gray-50 dark:bg-gray-900 mt-10 p-2 md:p-4 flex justify-center items-center rounded-2xl md:rounded-3xl border transition-all">
             <div className="relative bg-white dark:bg-black rounded-2xl md:rounded-3xl border p-2 max-w-screen-xl mx-auto transition-all">
               <Image
-                src={theme === "light" ? LightDash : DarkDash}
+                src={theme === "dark" ? DarkDash : LightDash}
                 alt="hero"
                 className="rounded-3xl"
                 draggable={false}
