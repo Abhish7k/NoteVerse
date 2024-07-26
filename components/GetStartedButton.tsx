@@ -12,7 +12,7 @@ const GetStartedButton = () => {
     <div>
       <RegisterLink>
         <Button
-          className="gap-1 rounded-full"
+          className="gap-1 rounded-lg"
           onMouseEnter={() => setIconHover(true)}
           onMouseLeave={() => setIconHover(false)}
         >

@@ -1,7 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import HeroSectionCta from "@/components/HeroSectionCta";
-import { CtaSection } from "@/components/CtaSection";
 import Footer from "@/components/Footer";
+import FeaturesSection from "@/components/FeaturesSection";
 
 export default async function Home() {
   return (
@@ -10,7 +10,7 @@ export default async function Home() {
         <HeroSectionCta />
       </HeroSection>
 
-      <CtaSection />
+      <FeaturesSection />
 
       <Footer />
     </section>
