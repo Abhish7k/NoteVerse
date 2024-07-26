@@ -1,8 +1,17 @@
+"use client";
+
 import FeaturesSectionBentoGrid from "./FeaturesSectionBentoGrid";
+import { motion } from "framer-motion";
 
 export default function FeaturesSection() {
   return (
-    <div className="mt-32 px-10 py-10 max-w-6xl mx-auto">
+    <motion.div
+      className="mt-32 px-10 py-10 max-w-6xl mx-auto"
+      viewport={{ once: false }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ type: "easIn", duration: 0.5, delay: 0.6 }}
+    >
       {/*  */}
       <div className="px-8 mb-12 lg:mb-20">
         <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
@@ -19,6 +28,6 @@ export default function FeaturesSection() {
 
       {/*  */}
       <FeaturesSectionBentoGrid />
-    </div>
+    </motion.div>
   );
 }
