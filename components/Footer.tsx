@@ -28,12 +28,12 @@ export default function Footer() {
           Note
           <span className="text-primary">Verse</span>
         </h1>
-        <h3 className="mt-4 font-light text-sm md:text-lg">
+        <h3 className="mt-4 font- text-sm md:text-lg text-foreground/70">
           Built by
           <Link
             href="https://github.com/Abhish7k"
             target="_blank"
-            className="ml-1"
+            className="ml-1 hover:text-foreground hover:underline transition-all"
           >
             Abhish7k
           </Link>
