@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import LightDash from "@/public/dash-light.png";
 import DarkDash from "@/public/dash-dark.png";
+import { Highlight } from "./ui/hero-highlight";
 
 export default function HeroSection({
   children,
@@ -25,11 +26,11 @@ export default function HeroSection({
         }}
       >
         <div>
-          <h1 className="mt-8 w-full text-center text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight transition-all">
+          <h1 className="mt-8 w-full text-center text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight transition-all flex flex-col items-center gap-1">
             Master Your Notes <br />
-            With Ease
+            <Highlight>With Ease</Highlight>
           </h1>
-          <p className="max-w-xl mx-auto mt-5 text-base lg:text-xl text-secondary-foreground/80 ">
+          <p className="max-w-80 md:max-w-md mx-auto mt-5 text-sm md:text-base lg:text-xl text-secondary-foreground/80 transition-all">
             Streamline your notes and boost productivity. Simple, powerful, and
             accessible.
           </p>
