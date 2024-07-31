@@ -104,6 +104,7 @@ const config = {
             )}")`,
           }),
         },
+
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
     },
