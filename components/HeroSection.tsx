@@ -25,11 +25,11 @@ export default function HeroSection({
         }}
       >
         <div>
-          <h1 className="mt-8 w-full text-center text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight transition-all">
+          <h1 className="mt-8 w-full text-center text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight transition-all flex flex-col items-center gap-1">
             Master Your Notes <br />
-            With Ease
+            <Highlight>With Ease</Highlight>
           </h1>
-          <p className="max-w-xl mx-auto mt-5 text-base lg:text-xl text-secondary-foreground/80 ">
+          <p className="max-w-80 md:max-w-md mx-auto mt-5 text-sm md:text-base lg:text-xl text-secondary-foreground/80 transition-all">
             Streamline your notes and boost productivity. Simple, powerful, and
             accessible.
           </p>
@@ -53,5 +53,32 @@ export default function HeroSection({
         </div>
       </motion.div>
     </div>
+  );
+}
+
+import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+
+export function HeroHighlightDemo() {
+  return (
+    <HeroHighlight>
+      <motion.h1
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        animate={{
+          opacity: 1,
+          y: [20, -5, 0],
+        }}
+        transition={{
+          duration: 0.5,
+          ease: [0.4, 0.0, 0.2, 1],
+        }}
+        className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
+      >
+        Master Your Notes <br />
+      </motion.h1>
+      <Highlight className="text-black dark:text-white">With Ease</Highlight>
+    </HeroHighlight>
   );
 }

@@ -1,4 +1,4 @@
-import HeroSection from "@/components/HeroSection";
+import HeroSection, { HeroHighlightDemo } from "@/components/HeroSection";
 import HeroSectionCta from "@/components/HeroSectionCta";
 import Footer from "@/components/Footer";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -11,6 +11,8 @@ export default async function Home() {
       <HeroSection>
         <HeroSectionCta />
       </HeroSection>
+
+      {/* <HeroHighlightDemo /> */}
 
       <FeaturesSection />
 
