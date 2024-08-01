@@ -50,7 +50,7 @@ const UserNav = ({
             <DropdownMenuItem asChild key={index}>
               <Link
                 href={item.href}
-                className="w-full flex justify-start items-center gap-2 cursor-pointer font-semibold"
+                className="w-full flex justify-start items-center gap-2 cursor-pointer font-medium"
               >
                 <item.icon className="h-4 w-4 text-primary" />
                 {item.name}
@@ -60,7 +60,7 @@ const UserNav = ({
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <LogoutLink>
-          <DropdownMenuItem className="w-full flex justify-start items-center gap-2 font-semibold cursor-pointer">
+          <DropdownMenuItem className="w-full flex justify-start items-center gap-2 font-medium cursor-pointer">
             <DoorClosedIcon className="h-4 w-4 text-primary" />
             Logout
           </DropdownMenuItem>
