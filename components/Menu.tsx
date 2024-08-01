@@ -16,8 +16,6 @@ export default async function Menu() {
   const name = user?.given_name as string;
   const email = user?.email as string;
 
-  console.log(userImage, name);
-
   return (
     <Sheet>
       <SheetTrigger asChild>
