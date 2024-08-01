@@ -49,7 +49,9 @@ const DashboardPage = async () => {
     <div className="grid items-start gap-8">
       <div className="flex items-center justify-between px-2">
         <div className="grid gap-1">
-          <h1 className="text-3xl md:text-4xl font-semibold">Your Notes</h1>
+          <h1 className="text-3xl md:text-4xl font-medium tracking-tight">
+            Your Notes
+          </h1>
         </div>
         {data?.Subscription?.status === "active" ? (
           <Button asChild>
@@ -105,7 +107,7 @@ const DashboardPage = async () => {
             >
               <div>
                 <Link href={`/dashboard/notes/${item.id}`}>
-                  <h1 className="font-semibold text-xl text-primary hover:underline">
+                  <h1 className="font-semibold text-xl text-primary hover:underline transition-all">
                     {item.title}
                   </h1>
                 </Link>

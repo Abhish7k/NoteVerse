@@ -42,7 +42,12 @@ export function LoginButton() {
 export function RegisterButton() {
   return (
     <RegisterLink>
-      <Button variant="secondary">Sign Up</Button>
+      <Button
+        variant="secondary"
+        className="hover:bg-foreground/10 transition-all"
+      >
+        Sign Up
+      </Button>
     </RegisterLink>
   );
 }
