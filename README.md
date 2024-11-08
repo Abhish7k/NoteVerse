@@ -1,6 +1,10 @@
 # 📝 Noteverse
 
-Noteverse is a powerful note-taking SaaS application built with modern technologies, designed to help users easily create, edit, and manage their notes. It features seamless authentication, robust database handling, and a flexible subscription model.
+Noteverse is a powerful note-taking SaaS application built with modern technologies, designed to help users easily create, edit, and manage their notes.
+
+
+![Preview](./public/readme-img.png)
+
 
 **[Visit Noteverse](https://noteverse-saas.vercel.app/)**
 
